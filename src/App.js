@@ -1,18 +1,14 @@
 //Always start with capital letters, can be function component or class component
+// Avoid complexity in components
 
-import Greet from "./1.components/1.function/Greet";
-import { NamedClass } from "./1.components/2.class.js/NamedClass";
-import Welcome from "./1.components/2.class.js/Welcome";
-import Sample from "./Sample";
+import NameListThree from "./8.list-rendering/NameListThree";
+import Person from "./8.list-rendering/Person";
 
 function App() {
   return (
     <div className="container">
       <h1>Welcome to ReactJS</h1>
-      <Greet />
-      <Welcome />
-      <NamedClass />
-      <Sample />
+      <NameListThree />
     </div>
   );
 }
