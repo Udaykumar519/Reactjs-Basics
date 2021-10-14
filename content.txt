@@ -108,8 +108,7 @@ LifeCycle Methods
 -> render
 -> componentDidMount 
 
-constructor - A special function that will get called whenever 
-              a new compoenent is created
+constructor - A special function that will get called whenever a new compoenent is created
 
       When to use ? 
       -------------
@@ -127,7 +126,7 @@ constructor - A special function that will get called whenever
          In our component we have access to this.props only after 
          we initially called super passing the props 
       2. This is the only place where we change or set the state directly 
-         overwriting thi.state fields 
+         overwriting this.state fields 
 
 static getDerivedStrateFromProps
 ----------------------------------
