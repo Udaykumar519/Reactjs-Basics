@@ -1,8 +1,8 @@
 //Always start with capital letters, can be function component or class component
 // Avoid complexity in components
 
-import Form from "./10.formHandling/Form";
-import FormOne from "./10.formHandling/FormOne";
+import Todos from "./12.ajax-calls/Todos";
+
 
 //normal styling
 // import "./9.styling/appStyle.css"
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="container">
       <h1 className="error">Welcome to ReactJS</h1>
-      <FormOne />
+      <Todos />
     </div>
   );
 }
