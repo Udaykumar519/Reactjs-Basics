@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
-import Child from './Child';
+import Child from './Child'
 
 class Parent extends Component {
     constructor(){
-        super();
-        this.state={
-            parent:"parent"
+        super()
+
+        this.state ={
+            parent: 'Parent'
         }
-        this.callParent=this.callParent.bind(this);
+
+        this.callParent = this.callParent.bind(this)
     }
+
     callParent(child){
-        alert( `Calling ${this.state.parent} from $(child)`)
-    }   
+        alert(`Calling ${this.state.parent} from ${child}`)
+    }
+
     render() {
         return (
             <div>
-            <Child name="uma" city="Hyd" method="{this.callParent}" />
-                
+                <Child name="Uma" city={({city:'Hyd'})} method={this.callParent} />
             </div>
         )
     }

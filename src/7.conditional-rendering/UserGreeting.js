@@ -1,19 +1,29 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 class UserGreeting extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isLoggedIn: false,
-    };
-  }
-  render() {
-    if (this.state.isLoggedIn) {
-      return <div>Welcome Uday</div>;
-    } else {
-      return <div>Welcome Guest</div>;
+    constructor(){
+        super()
+
+        this.state ={
+            isLoggedIn: true
+        }
     }
-  }
+
+    render() {
+        if(this.state.isLoggedIn){
+            return (
+                <div>
+                    Welcome Uma
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    Welcome Guest
+                </div>
+            )
+        }
+    }
 }
 
-export default UserGreeting;
+export default UserGreeting

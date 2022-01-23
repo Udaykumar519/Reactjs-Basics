@@ -2,88 +2,113 @@ import React, { Component } from 'react'
 
 class Form extends Component {
     constructor(){
-        super();
-        this.state={
-            username: " ",
-            comments: " ",
-            country: " ",
-            gender: " "
+        super()
 
+        this.state = {
+            username: '',
+            comments: '',
+            country: '',
+            gender: '',
+            isAdmin: false
         }
-    }
-    updateUserName(username){
-        this.setState({username:username})
-        //Again here it is aynchronous
-        // console.log(`username: ${this.state.username}`);
-    }
-    updateComments(comments){
-        this.setState({comments:comments})
-    }
-    getFormData(){
-        console.log(this.state.username);
-        console.log(this.state.comments);
-        console.log(this.state.country);
-        console.log(this.state.gender);
-    }
-    updateCountry(country){
-        this.setState({country:country})
 
     }
-    updateGender(gender){
-        this.setState({gender:gender})
+
+    updateUsername(username){
+        this.setState({username : username})   
     }
-    // write check box same as others(like Radio)
-    // updateAdmin(){
-    //     this.setState({isAdmin: !this.setState.isAdmin})
-    // }
+
+    updateComments(comments){
+        this.setState({comments: comments})   
+    }
+
+    updateCountry(country){
+        this.setState({country: country})
+    }
+
+    updateGender(gender){
+        this.setState({gender: gender})
+    }
+
+    updateIsAdmin(){
+        this.setState({
+            isAdmin: !this.state.isAdmin
+        })
+    }
+
+    getFormData(){
+        console.log(this.state.username)
+        console.log(this.state.comments)
+        console.log(this.state.country)
+        console.log(this.state.gender)
+        console.log(this.state.isAdmin)
+    }
+
     render() {
         return (
             <div className="container">
                 <h1>Form Component</h1>
                 <form action="">
                     <div className="form-group">
-                    <label htmlFor="">UserName</label>
-                    <input type="text" className="form-control w-50" value={this.state.username} onChange={event=>this.updateUserName(event.target.value)} />
+                        <label htmlFor="">UserName</label>
+                        <input type="text" 
+                               className="form-control w-50"
+                               value={this.state.username}
+                               onChange={event =>this.updateUsername(event.target.value)}
+                        />
                     </div>
                     <br />
                     <div className="form-group">
-                        <label htmlFor="">
-                        Comments
-                        </label>
-                        <textarea className="form-control w-50" value={this.state.comment} onChange={event=>this.updateComments(event.target.value)}></textarea>
+                        <label htmlFor="">Comments</label>
+                        <textarea  className="form-control w-50"
+                                   value={this.state.comments}
+                                   onChange={event => this.updateComments(event.target.value)}
+                        ></textarea>
                     </div>
+                    <br />
                     <div className="form-group">
-                        <label htmlFor="">
-                        Country
-                        </label>
+                        <label htmlFor="">Country</label>
                         <select className="form-select w-50"
-                        value={this.state.country}
-                        onChange={event=>this.updateCountry(event.target.value)}>
-                            <option value="">select</option>
+                                value ={this.state.country}
+                                onChange={event => this.updateCountry(event.target.value)}
+                        >
+                            <option value="">Select</option>
                             <option value="1">Bharat</option>
-                            <option value="2">Australia</option>
-                            <option value="3">Japan</option>
+                            <option value="2">Japan</option>
+                            <option value="3">Australia</option>
                         </select>
-                    </div>
-                    <br />
+                    </div>   
                     <br />
                     <div className="form-group">
-                        <label htmlFor="">
-                        Gender &nbsp;&nbsp;
-                        </label>
-                        <input type="radio" className="form-check-input " value={1} name="gender"
-                        onChange={event=>this.updateGender(event.target.value)}/> Female &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" className="form-check-input " value={0} name="gender"
-                        onChange={event=>this.updateGender(event.target.value)}/> Male &nbsp;&nbsp;&nbsp;&nbsp;
-                    </div>
+                        <label htmlFor="">Gender</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" 
+                               className="form-check-input" 
+                               value={1} 
+                               name="gender" 
+                               onChange={event => this.updateGender(event.target.value)}
+                        /> Female &nbsp;&nbsp;
+                        <input type="radio" 
+                               className="form-check-input" 
+                               value={0} 
+                               name="gender" 
+                               onChange={event => this.updateGender(event.target.value)}
+                        /> Male &nbsp;&nbsp;
+                    </div>  
                     <br />
+                    <div className="form-group">
+                        <label htmlFor="">Is Admin</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox"  
+                               className="form-check-input"
+                               value={this.state.isAdmin}
+                               onChange={event => this.updateIsAdmin(event.target.value)}
+                        />
+                    </div>                                                     
                     <br />
-                    <button type="button" className="btn btn-primary"
-                    onClick={this.getFormData.bind(this)} 
-                    >Submit
-                    </button>
+                    <button type="button" 
+                            className="btn btn-primary"
+                            onClick={this.getFormData.bind(this)}
+                    >Submit</button>
                 </form>
-
             </div>
         )
     }
